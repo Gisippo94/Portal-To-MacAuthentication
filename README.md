@@ -18,3 +18,7 @@ TP-Link Omada System has the limitation to not permit VLAN Assignment if portal 
 How to setup NPS for Radius Authentication (https://documentation.meraki.com/MS/Access_Control/Configuring_Microsoft_NPS_for_MAC-Based_RADIUS_-_MS_Switches)
 
 How to setup VLAN Assignment https://www.expertnetworkconsultant.com/configuring/ieee-802-1x-authentication-and-dynamic-vlan-assignment-with-nps-radius-server/
+
+# To Do:
+## Problems/Bug to fix:
+If multiple users access at the same moment the script can take the wrong MAC Address (read the wrong Event from Windows Event Logs) (Possible fix is to check the timestamp)
