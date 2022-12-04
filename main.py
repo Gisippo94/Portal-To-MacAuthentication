@@ -69,7 +69,7 @@ def createADUser(username, macaddress):
     expireDate = s + timedelta(days=accountExpire)
     expireDate = expireDate.strftime("%m/%d/%Y")
 
-    cmd = 'New-ADUser -Name %s -Accountpassword (ConvertTo-SecureString -AsPlainText %s -Force) -UserPrincipalName "%s@%s" -SamAccountName %s -GivenName %s -Surname "MAC Address" -path "%s" -Enabled $true -AccountExpirationDate %s -CannotChangePassword $True' % (macaddress, macaddress, macaddress, macaddress, domain, username, ou, expireDate) #Create AD User with MAC Address as Username and Password
+    cmd = 'New-ADUser -Name %s -Accountpassword (ConvertTo-SecureString -AsPlainText %s -Force) -UserPrincipalName "%s@%s" -SamAccountName %s -GivenName %s -Surname "MAC Address" -path "%s" -Enabled $true -AccountExpirationDate %s -CannotChangePassword $True' % (macaddress, macaddress, macaddress, domain, macaddress, username, ou, expireDate) #Create AD User with MAC Address as Username and Password
     completed = subprocess.run(["powershell", "-Command", cmd], capture_output=True)
     return completed
 
